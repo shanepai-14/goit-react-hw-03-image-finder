@@ -6,6 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
+import PropTypes from 'prop-types';
 const modalStyle = {
     position: 'absolute',
     top: '50%',
@@ -88,5 +89,8 @@ const ImageGallery = ({ images }) => {
       
     )
 }
+ImageGallery.propTypes = {
+  images: PropTypes.array.isRequired,
+};
 
 export default ImageGallery

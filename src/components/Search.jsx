@@ -4,9 +4,9 @@ import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import PropTypes from 'prop-types';
 
-
-export default function search({ onSubmit,search , onSearchChange}) {
+export default function search({ onSubmit, search , onSearchChange}) {
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
          onSubmit(event);
@@ -37,3 +37,8 @@ export default function search({ onSubmit,search , onSearchChange}) {
 
   );
 }
+search.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  search: PropTypes.string.isRequired,
+  onSearchChange: PropTypes.func.isRequired,
+};
