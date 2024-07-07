@@ -7,7 +7,11 @@ import SearchIcon from '@mui/icons-material/Search';
 
 
 export default function search({ onSubmit,search , onSearchChange}) {
-  
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+         onSubmit(event);
+        }
+      };
   return (
 
     <Paper
@@ -22,6 +26,7 @@ export default function search({ onSubmit,search , onSearchChange}) {
         inputProps={{ 'aria-label': 'search ' }}
         value={search}
         onChange={onSearchChange}
+        onKeyPress={handleKeyPress}
       
       />
       <IconButton type="button" onClick={onSubmit} sx={{ p: '10px' }} aria-label="search">
